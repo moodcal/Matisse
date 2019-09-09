@@ -109,6 +109,16 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
         mCheckView.setChecked(checked);
     }
 
+    public void setDisable(boolean disable) {
+        float alpha = 1.0f;
+        mCheckView.setVisibility(VISIBLE);
+        if (disable) {
+            alpha = 0.5f;
+            mCheckView.setVisibility(INVISIBLE);
+        }
+        mThumbnail.setAlpha(alpha);
+    }
+
     private void setImage() {
         if (mMedia.isGif()) {
             SelectionSpec.getInstance().imageEngine.loadGifThumbnail(getContext(), mPreBindInfo.mResize,

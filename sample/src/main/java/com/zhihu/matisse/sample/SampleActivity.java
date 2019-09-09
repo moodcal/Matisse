@@ -85,12 +85,14 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                             .choose(MimeType.ofImage(), false)
                                             .countable(true)
                                             .capture(true)
+                                            .spanCount(4)
                                             .captureStrategy(
                                                     new CaptureStrategy(true, "com.zhihu.matisse.sample.fileprovider", "test"))
                                             .maxSelectable(9)
-                                            .addFilter(new GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
-                                            .gridExpectedSize(
-                                                    getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
+//                                            .addFilter(new GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
+                                            .addFilter(new UMPhotoFilter())
+//                                            .gridExpectedSize(
+//                                                    getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
                                             .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                                             .thumbnailScale(0.85f)
 //                                            .imageEngine(new GlideEngine())  // for glide-V3

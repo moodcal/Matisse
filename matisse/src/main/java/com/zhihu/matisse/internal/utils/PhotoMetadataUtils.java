@@ -140,6 +140,15 @@ public final class PhotoMetadataUtils {
         return null;
     }
 
+    public static boolean isDisabled(Context context, Item item) {
+        if (SelectionSpec.getInstance().filters != null) {
+            for (Filter filter : SelectionSpec.getInstance().filters) {
+                if (filter.isDisabled(context, item)) return true;
+            }
+        }
+        return false;
+    }
+
     private static boolean isSelectableType(Context context, Item item) {
         if (context == null) {
             return false;

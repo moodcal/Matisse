@@ -126,6 +126,8 @@ public class AlbumMediaAdapter extends
     }
 
     private void setCheckStatus(Item item, MediaGrid mediaGrid) {
+        mediaGrid.setDisable(mSelectedCollection.isDisabled(item));
+
         if (mSelectionSpec.countable) {
             int checkedNum = mSelectedCollection.checkedNumOf(item);
             if (checkedNum > 0) {

@@ -59,4 +59,9 @@ class GifSizeFilter extends Filter {
         return null;
     }
 
+    @Override
+    public boolean isDisabled(Context context, Item item) {
+        return false;
+    }
+
 }

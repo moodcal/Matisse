@@ -166,6 +166,10 @@ public class SelectedItemCollection {
         return mItems.contains(item);
     }
 
+    public boolean isDisabled(Item item) {
+        return PhotoMetadataUtils.isDisabled(mContext, item);
+    }
+
     public IncapableCause isAcceptable(Item item) {
         if (maxSelectableReached()) {
             int maxSelectable = currentMaxSelectable();
