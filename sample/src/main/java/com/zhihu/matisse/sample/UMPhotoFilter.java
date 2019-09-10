@@ -31,6 +31,6 @@ public class UMPhotoFilter extends Filter {
 
     @Override
     public boolean isDisabled(Context context, Item item) {
-        return item.mimeType.equals("image/jpeg");
+        return false;
     }
 }

@@ -55,7 +55,9 @@ public abstract class Filter {
      */
     public abstract IncapableCause filter(Context context, Item item);
 
-    public abstract boolean isDisabled(Context context, Item item);
+    public boolean isDisabled(Context context, Item item) {
+        return false;
+    }
 
     /**
      * Whether an {@link Item} need filtering.

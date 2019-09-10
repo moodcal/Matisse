@@ -19,13 +19,16 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="item.checkCircle.backgroundColor">#09b83e</item>
     </style>
 
     <style name="ZhihuOverlay" parent="ThemeOverlay.AppCompat">
+        <item name="item.checkCircle.backgroundColor">#09b83e</item>
         <item name="colorButtonNormal">@color/zhihu_primary</item>
     </style>
 
     <style name="DraculaOverlay" parent="ThemeOverlay.AppCompat">
+        <item name="item.checkCircle.backgroundColor">#09b83e</item>
         <item name="colorButtonNormal">@color/dracula_primary</item>
     </style>
 
