@@ -39,6 +39,7 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
     private Item mMedia;
     private PreBindInfo mPreBindInfo;
     private OnMediaGridClickListener mListener;
+    private boolean mDisabled;
 
     public MediaGrid(Context context) {
         super(context);
@@ -107,11 +108,15 @@ public class MediaGrid extends SquareFrameLayout implements View.OnClickListener
     }
 
     public void setChecked(boolean checked) {
+        if (mDisabled) return;
+
         mCheckView.setChecked(checked);
         mThumbnail.setAlpha(checked ? 0.5f : 1.0f);
     }
 
     public void setDisable(boolean disable) {
+        mDisabled = disable;
+
         float alpha = 1.0f;
         mCheckView.setVisibility(VISIBLE);
         if (disable) {

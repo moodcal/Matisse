@@ -8,6 +8,7 @@ import com.zhihu.matisse.internal.entity.IncapableCause;
 import com.zhihu.matisse.internal.entity.Item;
 
 import java.util.Collections;
+import java.util.Random;
 import java.util.Set;
 
 public class UMPhotoFilter extends Filter {
@@ -31,6 +32,6 @@ public class UMPhotoFilter extends Filter {
 
     @Override
     public boolean isDisabled(Context context, Item item) {
-        return false;
+        return item.id % 2 == 0;
     }
 }
