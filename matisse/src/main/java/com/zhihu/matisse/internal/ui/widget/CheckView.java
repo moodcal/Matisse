@@ -38,7 +38,7 @@ public class CheckView extends View {
 
     public static final int UNCHECKED = Integer.MIN_VALUE;
     protected static final float STROKE_WIDTH = 1.0f; // dp
-    protected static final float SHADOW_WIDTH = 8.0f; // dp
+    protected static final float SHADOW_WIDTH = 6.0f; // dp
     protected static final int SIZE = 38; // dp
     protected static final float STROKE_RADIUS = 8.5f; // dp
     protected static final float BG_RADIUS = 8.0f; // dp

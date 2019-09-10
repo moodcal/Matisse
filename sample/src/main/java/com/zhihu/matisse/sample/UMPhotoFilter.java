@@ -32,6 +32,6 @@ public class UMPhotoFilter extends Filter {
 
     @Override
     public boolean isDisabled(Context context, Item item) {
-        return item.id % 2 == 0;
+        return false;//item.id % 2 == 0;
     }
 }

@@ -83,7 +83,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                 case R.id.zhihu:
                                     Matisse.from(SampleActivity.this)
                                             .choose(MimeType.ofImage(), false)
-                                            .countable(false)
+                                            .countable(true)
                                             .capture(true)
                                             .spanCount(4)
                                             .captureStrategy(

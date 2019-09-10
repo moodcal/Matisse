@@ -31,19 +31,15 @@ public class RectCheckView extends CheckView {
         float w, smallPadding, largePadding;
         RectF rectF;
 
-//        // draw outer and inner shadow
-//        initShadowPaint();
-//        float w = (STROKE_RADIUS + STROKE_WIDTH + SHADOW_WIDTH) * mDensity * 2 * 0.8f;
-//        float smallPadding = (SIZE * mDensity - w) * smallRate;
-//        float largePadding = (SIZE * mDensity - w) * largeRate;
-//        RectF rectF = new RectF(largePadding, smallPadding, w+largePadding, w+smallPadding);
-//        canvas.drawRoundRect(rectF, corner, corner, mShadowPaint);
-
-        // draw white stroke
+        // draw outer and inner shadow
+        initShadowPaint();
         w = STROKE_RADIUS * 2 * mDensity * 0.8f;
         smallPadding = (SIZE * mDensity - w) * smallRate;
         largePadding = (SIZE * mDensity - w) * largeRate;
         rectF = new RectF(largePadding, smallPadding, w+largePadding, w+smallPadding);
+        canvas.drawRoundRect(rectF, corner, corner, mShadowPaint);
+
+        // draw white stroke
         canvas.drawRoundRect(rectF, corner, corner, mStrokePaint);
 
         // draw content
@@ -58,8 +54,8 @@ public class RectCheckView extends CheckView {
 
                 initTextPaint();
                 String text = String.valueOf(mCheckedNum);
-                int baseX = (int) (canvas.getWidth() - mTextPaint.measureText(text)) / 2;
-                int baseY = (int) (canvas.getHeight() - mTextPaint.descent() - mTextPaint.ascent()) / 2;
+                int baseX = (int) (canvas.getWidth() - mTextPaint.measureText(text)) / 2 + (int)(smallPadding*0.7f);
+                int baseY = (int) (canvas.getHeight() - mTextPaint.descent() - mTextPaint.ascent()) / 2 - (int)(smallPadding*0.7f) ;
                 canvas.drawText(text, baseX, baseY, mTextPaint);
             }
         } else {
